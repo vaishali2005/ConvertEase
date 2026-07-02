@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converting</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/dashboard.css')}}">
+</head>
+
+<body data-msg="{{ msg }}" data-type="{{ msg_type }}">
+    <div class="container">
+        <h1>ConvertEase</h1>
+        <p class="subtitle">Fast & simple file & image conversion</p>
+
+        <!-- Upload -->
+        <form action="/" method="POST" enctype="multipart/form-data" id="form">
+            <label class="upload-box" id="dropArea">
+                <input type="file" id="fileInput" name="file" required>
+                <span>📂 Click or Drag File</span>
+            </label>
+
+
+            <div id="fileInfo" class="file-info"></div>
+
+            <!-- Formats -->
+            <div class="formats">
+                <button type="button" name="pdf" onclick="setFormat(this,'pdf')">PDF</button>
+                <button type="button" name="jpg" onclick="setFormat(this,'jpg')">JPG</button>
+                <button type="button" name="png" onclick="setFormat(this,'png')">PNG</button>
+                <button type="button" name="docx" onclick="setFormat(this,'docx')">DOCX</button>
+                <button type="button" name="txt" onclick="setFormat(this,'txt')">TXT</button>
+            </div>
+
+            <input type="hidden" id="format" name="format">
+
+            <!-- Convert -->
+            <button type="button" class="convert-btn" onclick="convertFile()">
+                Convert Now
+            </button>
+            <div id="loader" class="loader" >Converting...</div>
+        </form>
+
+        <div class="footer">
+        © 2026 ConvertEase • Built with ❤️ using Flask & Python
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+
+</html>
