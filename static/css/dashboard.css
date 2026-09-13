@@ -312,3 +312,50 @@ input[type="file"] {
         font-size: 14px;
     }
 }
+
+@media (max-width: 380px) {
+
+    .small-popup {
+        width: calc(100vw - 20px) !important;
+        max-width: calc(100vw - 20px) !important;
+
+        padding: 18px !important;
+
+        grid-template-columns: 38px minmax(0, 1fr) !important;
+        column-gap: 10px !important;
+
+        min-height: 150px !important;
+    }
+
+
+    .small-popup .swal2-icon {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+
+    .small-popup .swal2-title {
+        font-size: 17px !important;
+    }
+
+
+    .small-popup .swal2-html-container {
+        font-size: 12px !important;
+
+        padding-right: 78px !important;
+    }
+
+
+    .small-popup .swal2-actions {
+        right: 18px !important;
+        bottom: 18px !important;
+    }
+
+
+    .popup-btn {
+        width: 62px !important;
+        height: 40px !important;
+
+        font-size: 15px !important;
+    }
+}
